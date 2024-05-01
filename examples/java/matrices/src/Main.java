@@ -1,5 +1,5 @@
 public class Main {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws InterruptedException {
         Matrix m = create(10, 10_000_000);
 
         System.out.println("Sum = " + m.sum());
@@ -13,7 +13,7 @@ public class Main {
     }
 
 
-    private static void testAdd(Matrix m1, Matrix m2) {
+    private static void testAdd(Matrix m1, Matrix m2) throws InterruptedException {
         var t0 = System.nanoTime();
         var m3 = m1.addSerial(m2);
         var t1 = System.nanoTime();
@@ -24,7 +24,7 @@ public class Main {
         System.out.println("Parallel 'add': " + (t2 - t1) / 1_000 + " ms");
     }
 
-    private static void testSum(Matrix m1) {
+    private static void testSum(Matrix m1) throws InterruptedException {
         var t0 = System.nanoTime();
         var m3 = m1.sum();
         var t1 = System.nanoTime();

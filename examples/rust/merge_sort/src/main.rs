@@ -6,7 +6,7 @@ pub mod parallel_sort;
 pub mod serial_sort;
 
 fn main() {
-    let array3 = random_array(100_000);
+    let array3 = random_array(50_000_000);
 
     let t1 = Instant::now();
     let _ = serial_sort::sort(&array3);
